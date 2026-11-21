@@ -6,7 +6,7 @@ Items tracked here are intentionally deferred while we design and build the foun
 
 ## 1. Infrastructure, Hosting & Deployment
 
-- [ ] **Configure CORS on Azure Function App** *(user will configure later)*
+- [x] **Configure CORS on Azure Function App** *(completed: added `https://themoviestorm.github.io` with credentials)*
   - Allow the local dev origin (`http://localhost:5173`), the GitHub Pages organization origin (`https://<org>.github.io`), and the eventual custom domain.
   - Ensure `Authorization` and `Content-Type` headers and `GET, POST, PUT, DELETE, OPTIONS` methods are permitted.
   - Also check **Azure Blob Storage CORS** (`sharedstoragepool.blob.core.windows.net`) if `.torrent` files or media metadata are fetched via browser `fetch`/`XHR` instead of direct `<a download>` / `<img>` / `<video>` tags.
