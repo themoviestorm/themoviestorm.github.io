@@ -49,9 +49,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth }) => {
           {/* Brand Logo */}
           <Link to="/" className="navbar-brand">
             <div className="brand-icon-box">
-              <Film size={22} className="brand-film-icon" />
+              <Film size={20} className="brand-film-icon" />
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div className="brand-text-block">
               <span className="brand-name">Movie Storm</span>
               <span className="brand-tagline">4K TORRENT CATALOG</span>
             </div>
@@ -68,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth }) => {
             <span>Movies</span>
           </Link>
           <Link to="/browse?type=series" className={`nav-link ${location.search.includes('type=series') ? 'active' : ''}`}>
-            <span>TV Series</span>
+            <span>Series</span>
           </Link>
           <Link to="/browse?sort=rating" className={`nav-link ${location.search.includes('sort=rating') ? 'active' : ''}`}>
             <Flame size={15} />
@@ -91,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth }) => {
             <Search size={15} className="nav-search-icon" />
             <input
               type="text"
-              placeholder="Search 4K movies, anime..."
+              placeholder="Search 4K..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               className="nav-search-input"
@@ -129,8 +129,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuth }) => {
               </button>
             </div>
           ) : (
-            <button onClick={onOpenAuth} className="btn-signin">
-              Sign In
+            <button onClick={onOpenAuth} className="btn-signin" title="Sign In">
+              <User size={15} className="signin-user-icon" />
+              <span className="signin-text">Sign In</span>
             </button>
           )}
         </div>

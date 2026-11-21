@@ -59,6 +59,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ content }) => {
             src={posterSrc}
             alt={content.title}
             loading="lazy"
+            referrerPolicy="no-referrer"
             onError={(e) => {
               // Fallback to placeholder if image link fails
               (e.target as HTMLImageElement).src =

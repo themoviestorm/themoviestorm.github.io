@@ -154,6 +154,10 @@ export const ContentDetailPage: React.FC = () => {
               <img
                 src={resolveImageUrl(content.posterUrl, 'poster')}
                 alt={content.title}
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=780&auto=format&fit=crop';
+                }}
               />
             </div>
           </div>

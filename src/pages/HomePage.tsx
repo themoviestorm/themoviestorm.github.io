@@ -134,6 +134,10 @@ export const HomePage: React.FC = () => {
                 <img
                   src={resolveImageUrl(heroContent.posterUrl, 'poster')}
                   alt={heroContent.title}
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=780&auto=format&fit=crop';
+                  }}
                 />
                 <div className="hero-3d-reflection" />
               </div>
