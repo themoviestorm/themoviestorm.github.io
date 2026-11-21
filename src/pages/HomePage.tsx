@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Play, Download, Star, Flame, Film, Sparkles, Heart } from 'lucide-react';
 import { Content, PlaylistItem } from '../api/types';
-import { getPlaylists, searchContent, addFavorite } from '../api/client';
+import { getPlaylists, searchContent, addFavorite, MOCK_ALL_CONTENT, MOCK_PLAYLISTS } from '../api/client';
 import { resolveImageUrl, formatRuntime } from '../api/assets';
 import { MovieCard } from '../components/common/MovieCard';
 import { TrailerModal } from '../components/trailer/TrailerModal';
@@ -10,13 +10,13 @@ import { useAuth } from '../context/AuthContext';
 
 export const HomePage: React.FC = () => {
   const { token } = useAuth();
-  const [heroContent, setHeroContent] = useState<Content | null>(null);
-  const [playlists, setPlaylists] = useState<PlaylistItem[]>([]);
-  const [trendingList, setTrendingList] = useState<Content[]>([]);
+  const [heroContent, setHeroContent] = useState<Content | null>(MOCK_ALL_CONTENT[0] || null);
+  const [playlists, setPlaylists] = useState<PlaylistItem[]>(MOCK_PLAYLISTS);
+  const [trendingList, setTrendingList] = useState<Content[]>(MOCK_ALL_CONTENT);
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
   const [favFeedback, setFavFeedback] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function loadCatalog() {

@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Search, SlidersHorizontal, RotateCcw } from 'lucide-react';
 import { Content, Category } from '../api/types';
-import { searchContent, getCategories } from '../api/client';
+import { searchContent, getCategories, MOCK_ALL_CONTENT, MOCK_CATEGORIES } from '../api/client';
 import { MovieCard } from '../components/common/MovieCard';
 
 export const BrowsePage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [contentList, setContentList] = useState<Content[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [contentList, setContentList] = useState<Content[]>(MOCK_ALL_CONTENT);
+  const [categories, setCategories] = useState<Category[]>(MOCK_CATEGORIES);
+  const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(0);
   const PAGE_SIZE = 12;
 
