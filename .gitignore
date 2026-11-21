@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+
+# Environment & secrets
+.env
+.env*.local
+
+# Logs & caches
+*.log
+npm-debug.log*
+.turbo/
+.eslintcache
+
+# Testing
+coverage/
+playwright-report/
+test-results/
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
