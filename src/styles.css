@@ -254,6 +254,11 @@ a {
   color: var(--accent-primary);
 }
 
+.brand-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
 .brand-name {
   font-family: var(--font-display);
   font-size: 1.25rem;
@@ -271,6 +276,12 @@ a {
   letter-spacing: 0.08em;
   color: var(--accent-primary);
   white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .brand-tagline {
+    display: none;
+  }
 }
 
 /* Primary Desktop Nav Links */
@@ -946,6 +957,38 @@ a {
 
 .phone-mockup-frame .nav-search-form {
   display: none !important;
+}
+
+.phone-mockup-frame .brand-tagline {
+  display: none !important;
+}
+
+.phone-mockup-frame .navbar-content {
+  padding: 0.65rem 0.85rem !important;
+}
+
+.phone-mockup-frame .signin-text {
+  display: none !important;
+}
+
+.phone-mockup-frame .signin-user-icon {
+  display: inline-block !important;
+}
+
+.phone-mockup-frame .btn-signin {
+  width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+}
+
+.phone-mockup-frame .studio-btn-label {
+  display: none !important;
+}
+
+.phone-mockup-frame .navbar-studio-btn {
+  padding: 0.45rem !important;
+  border-radius: 50% !important;
 }
 
 /* ==============================================================================
