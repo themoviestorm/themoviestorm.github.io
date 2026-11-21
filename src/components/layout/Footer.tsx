@@ -53,8 +53,8 @@ export const Footer: React.FC = () => {
 
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Movie Storm. All rights reserved.</span>
-        <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-          Crafted with <Heart size={14} color="var(--accent-primary)" fill="var(--accent-primary)" /> for cinema lovers
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+          Crafted with <Heart size={14} color="var(--accent-primary)" fill="var(--accent-primary)" style={{ display: 'inline-block', verticalAlign: 'middle', flexShrink: 0 }} /> for cinema lovers
         </span>
       </div>
     </footer>

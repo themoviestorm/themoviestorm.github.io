@@ -261,6 +261,7 @@ a {
   letter-spacing: -0.02em;
   color: var(--text-primary);
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .brand-tagline {
@@ -269,18 +270,25 @@ a {
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--accent-primary);
+  white-space: nowrap;
 }
 
 /* Primary Desktop Nav Links */
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.1rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   .navbar-links {
     display: none;
+  }
+}
+
+@media (min-width: 1081px) and (max-width: 1240px) {
+  .navbar-links {
+    gap: 0.65rem;
   }
 }
 
@@ -294,6 +302,7 @@ a {
   padding: 0.45rem 0.8rem;
   border-radius: 9999px;
   transition: all 0.18s ease;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -311,13 +320,14 @@ a {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .nav-search-form {
   position: relative;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 760px) {
   .nav-search-form {
     display: none;
   }
@@ -340,14 +350,20 @@ a {
   padding: 0.45rem 1rem 0.45rem 2.2rem;
   font-family: var(--font-body);
   font-size: 0.85rem;
-  width: 220px;
+  width: 200px;
   transition: all 0.2s ease;
+}
+
+@media (min-width: 1081px) and (max-width: 1240px) {
+  .nav-search-input {
+    width: 160px;
+  }
 }
 
 .nav-search-input:focus {
   outline: none;
   border-color: var(--border-hover);
-  width: 280px;
+  width: 260px;
   box-shadow: 0 0 16px var(--glow-color);
 }
 
@@ -365,6 +381,8 @@ a {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.18s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .navbar-studio-btn:hover {
@@ -395,6 +413,7 @@ a {
   justify-content: center;
   cursor: pointer;
   transition: all 0.15s ease;
+  flex-shrink: 0;
 }
 
 .theme-toggle-btn:hover {
@@ -414,6 +433,8 @@ a {
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(var(--accent-primary-rgb), 0.35);
   transition: all 0.18s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-signin:hover {
@@ -429,9 +450,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1081px) {
   .navbar-hamburger-btn {
     display: none;
   }
@@ -443,6 +465,7 @@ a {
   background: var(--bg-card);
   overflow-x: auto;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .subnav-container::-webkit-scrollbar {
@@ -457,18 +480,21 @@ a {
   align-items: center;
   gap: 0.65rem;
   white-space: nowrap;
+  min-width: max-content;
 }
 
 .subnav-pill {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-secondary);
-  padding: 0.35rem 0.8rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 8px;
   transition: all 0.15s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .subnav-pill:hover {
@@ -488,6 +514,8 @@ a {
   background: rgba(var(--accent-secondary-rgb), 0.1);
   border: 1px solid rgba(var(--accent-secondary-rgb), 0.25);
   font-family: var(--font-mono);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* Mobile Drawer Dropdown */
@@ -646,6 +674,21 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--accent-primary-rgb), 0.3) transparent;
+}
+
+.studio-drawer-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.studio-drawer-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.studio-drawer-body::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent-primary-rgb), 0.3);
+  border-radius: 9999px;
 }
 
 .studio-info-banner {
@@ -814,6 +857,33 @@ a {
 .phone-mockup-scroll {
   flex: 1;
   overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.phone-mockup-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure Phone Simulator Frame replicates real mobile UX faithfully on desktop */
+.phone-mockup-frame .mobile-bottom-nav {
+  display: flex !important;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 34px 34px;
+}
+
+.phone-mockup-frame .navbar-links {
+  display: none !important;
+}
+
+.phone-mockup-frame .navbar-hamburger-btn {
+  display: flex !important;
+}
+
+.phone-mockup-frame .nav-search-form {
+  display: none !important;
 }
 
 /* ==============================================================================
