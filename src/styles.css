@@ -991,6 +991,15 @@ a {
   border-radius: 50% !important;
 }
 
+.phone-mockup-frame .cards-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0.75rem !important;
+}
+
+.phone-mockup-frame .shelf-view-all {
+  font-size: 0.75rem !important;
+}
+
 /* ==============================================================================
    DESKTOP & MOBILE NAVIGATION
    ============================================================================== */
@@ -1495,13 +1504,14 @@ a {
 
 @media (max-width: 640px) {
   .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.85rem;
   }
 }
 
 .card-3d-wrapper {
   perspective: 1000px;
+  min-width: 0;
 }
 
 .card-3d-inner {
